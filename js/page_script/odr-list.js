@@ -1,5 +1,6 @@
 $(".select2").select2();
-$("#tblMyTask").DataTable();
+$("#datetime").daterangepicker();
+$("#tblODR").DataTable();
 
 $(document).ready(function(){
 

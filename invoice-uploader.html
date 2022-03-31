@@ -1,178 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>ODR Tracking | Uploader</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />    
-    
-    <!-- dropzone -->
-    <link rel="stylesheet" href="plugins/dropzone/dropzone.min.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ODR Tracking | Uploader</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+
+  <!-- dropzone -->
+  <link rel="stylesheet" href="plugins/dropzone/dropzone.min.css" />
 
   <!-- Select2 -->
   <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-  
-  <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css"/>
+
+  <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css" />
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="shortcut icon" href="https://wolflodge.nipsea.com.sg/_layouts/images/NipseaLogo.png" />
   <!-- Google Font: Source Sans Pro -->
   <link href="dist/css/googlefonts.css" rel="stylesheet">
 
-<style>
+  <style>
     .dropzone {
-    background: white;
-    border-radius: 5px;
-    border: 2px dashed rgb(0, 135, 247);
-    border-image: none;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-</style>
+      background: white;
+      border-radius: 5px;
+      border: 2px dashed rgb(0, 135, 247);
+      border-image: none;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 
-  </head>
-  <body class="layout-navbar-fixed">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-      <!-- Navbar -->
-      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-          <li class="nav-item d-none d-sm-inline-block active">
-            <a href="invoice-uploader.html" class="nav-link">Uploader</a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="invoice-list.htm" class="nav-link">Upload Invoices</a>
-          </li>
-        </ul>
+</head>
 
-        <!-- User Info Menu-->
-        <ul class="navbar-nav ml-auto">
-          <li>
-            <a class="nav-link" href="masterdata.html">
-                <i class="fa fa-pencil-alt"></i>
-            </a>
+<body class="layout-navbar-fixed">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="mytask.html" class="nav-link">Home</a>
+      </li>
+        <li class="nav-item d-none d-sm-inline-block active">
+          <a href="invoice-uploader.html" class="nav-link">Uploader</a>
         </li>
-          <!-- Messages Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-user"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="dist/img/user.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title" id="lbluname">                      
-                      <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm" id="lbluemail"></p>
-                    <p class="text-sm text-muted" id="lblurole"></p>
-                  </div>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="invoice-list.html" class="nav-link">Upload Invoices</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="odr-list.html" class="nav-link">ODR List</a>
+        </li>
+      </ul>
+
+      <!-- User Info Menu-->
+      <ul class="navbar-nav ml-auto">
+        <li>
+          <a class="nav-link" href="masterdata.html">
+            <i class="fa fa-pencil-alt"></i>
+          </a>
+        </li>
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="dist/img/user.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title" id="lbluname">
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm" id="lbluemail"></p>
+                  <p class="text-sm text-muted" id="lblurole"></p>
                 </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-          
-        </ul>
-      </nav>
-      <!-- /.navbar -->
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1>Invoice Uploader</h1>
-              </div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Invoice Uploader</li>
-                </ol>
-              </div>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Invoice Uploader</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Invoice Uploader</li>
+              </ol>
             </div>
           </div>
-          <!-- /.container-fluid -->
-        </section>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
 
-        <!-- Main content -->
-        <section class="content">
-          <!-- Default box -->
-          <div class="card">
-            <div class="card-body">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="dropzone dropzone-default dz-clickable" id="kt_dropzone_1">
-                      <div class="dropzone-msg dz-message needsclick">
-                        <img src="dist/img/excel.png" class="dropzone-msg-title" />
-                        <h3 class="dropzone-msg-title" data-key="drop excel file here or click to upload">
-                          Drop excel file here or click to upload.
-                        </h3>
-                        <span class="dropzone-msg-desc" data-key="import an excel file">Import an Excel
-                          File</span>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-                  
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-              <div class="float-right">
-                <button id="btnUploadReport" type="button" class="btn btn-success">Upload Report</button>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-body">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="dropzone dropzone-default dz-clickable" id="kt_dropzone_1">
+                <div class="dropzone-msg dz-message needsclick">
+                  <img src="dist/img/excel.png" class="dropzone-msg-title" />
+                  <h3 class="dropzone-msg-title" data-key="drop excel file here or click to upload">
+                    Drop excel file here or click to upload.
+                  </h3>
+                  <span class="dropzone-msg-desc" data-key="import an excel file">Import an Excel
+                    File</span>
+                </div>
               </div>
             </div>
-            <!-- /.card-footer-->
-          </div>
-          <!-- /.card -->
-        </section>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
 
-      <footer class="main-footer">
-        <div class="float-right d-none d-sm-block"><b>Version</b> 1.0.0</div>
-        <strong
-          >Copyright &copy; 2022
-          <a href="https://nipponpaint.lk">NPLK IT Team</a>.</strong
-        >
-        All rights reserved.
-      </footer>
+
+
+
+
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <div class="float-right">
+              <button id="btnUploadReport" type="button" class="btn btn-success">Upload Report</button>
+            </div>
+          </div>
+          <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+      </section>
+      <!-- /.content -->
     </div>
-    <!-- ./wrapper -->
+    <!-- /.content-wrapper -->
 
-    <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Select2 -->
-    <script src="plugins/select2/js/select2.full.min.js"></script>
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-block"><b>Version</b> 1.0.0</div>
+      <strong>Copyright &copy; 2022
+        <a href="https://nipponpaint.lk">NPLK IT Team</a>.</strong>
+      All rights reserved.
+    </footer>
+  </div>
+  <!-- ./wrapper -->
 
-    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-   
-    <script type="text/javascript" src="js/js.cookie.min.js"></script>
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 -->
+  <script src="plugins/select2/js/select2.full.min.js"></script>
 
-    <!-- Custome Scripts-->
-    <script src="plugins/dropzone/dropzone.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.min.js"></script>
+  <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
 
-    <script src="js/common.js"></script>
-    <script src="js/page_script/invoice-uploader.js"></script>
-    
-  </body>
+  <script type="text/javascript" src="js/js.cookie.min.js"></script>
+
+  <!-- Custome Scripts-->
+  <script src="plugins/dropzone/dropzone.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+
+  <script src="js/common.js"></script>
+  <script src="js/page_script/invoice-uploader.js"></script>
+
+</body>
+
 </html>

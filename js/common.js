@@ -80,12 +80,12 @@ function fire_async_api_post(urlParam, res) {
 }
 
 /* API Upload files */
-function fire_async_api_upload_file(formdata, country) {
+function fire_async_api_upload_file(formdata, userid) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url:
         apiURL +
-        "ODR/uploadinvoices?userid=1",
+        "ODR/uploadinvoices?userid="+userid+"",
       type: "POST",
       headers: {
         Authorization: auth,
