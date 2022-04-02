@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge" />
+    <title>ODR Tracking | Comments</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="plugins/fontawesome-free/css/all.min.css" />
+
+    <!-- dropzone -->
+    <link rel="stylesheet"
+          href="plugins/dropzone/dropzone.min.css" />
+
+    <!-- Select2 -->
+    <link rel="stylesheet"
+          href="plugins/select2/css/select2.min.css">
+    <link rel="stylesheet"
+          href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+    <!-- datatable -->
+    <link rel="stylesheet"
+          href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet"
+          href="plugins/datatables-fixedcolumns/css/fixedColumns.bootstrap4.min.css" />
+
+    <!-- daterange picker-->
+    <link rel="stylesheet"
+          href="plugins/daterangepicker/daterangepicker.css" />
+
+    <link rel="stylesheet"
+          href="plugins/sweetalert2/sweetalert2.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet"
+          href="dist/css/adminlte.min.css">
+    <link rel="shortcut icon"
+          href="https://wolflodge.nipsea.com.sg/_layouts/images/NipseaLogo.png" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="dist/css/googlefonts.css"
+          rel="stylesheet">
+
+    <style>
+        .dropzone {
+            background: white;
+            border-radius: 5px;
+            border: 2px dashed rgb(0, 135, 247);
+            border-image: none;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Site wrapper -->
+    <div class="wrapper">
+       
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+           
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <!-- Default box -->
+                    <div class="card col-sm-4" style="margin-top: 150px;">
+                        <div class="card-body login-card-body">
+                            <p class="login-box-msg">Sign in to start your session</p>
+
+                            <div>
+                                <div class="input-group mb-3">
+                                    <input type="email" id="txtuname"
+                                           class="form-control"
+                                           placeholder="User Name">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-envelope"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" id="txtpwd"
+                                           class="form-control"
+                                           placeholder="Password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="icheck-primary">
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-4">
+                                        <button type="submit" onclick="getuserdetail()"
+                                                class="btn btn-primary btn-block">Sign In</button>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                            </div>
+
+                 
+                            <!-- /.social-auth-links -->
+
+                            
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block"><b>Version</b> 1.0.0</div>
+            <strong>Copyright &copy; 2022
+                <a href="https://nipponpaint.lk">NPLK IT Team</a>.</strong>
+            All rights reserved.
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- moment js-->
+    <script type="text/javascript"
+            src="plugins/moment/moment.js"></script>
+
+    <!-- daterange picker-->
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Select2 -->
+    <script src="plugins/select2/js/select2.full.min.js"></script>
+
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+
+    <script type="text/javascript"
+            src="js/js.cookie.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="plugins/datatables/jquery.dataTables.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
+
+
+    <!-- Custome Scripts-->
+    <script src="plugins/dropzone/dropzone.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+
+    <script src="js/common.js"></script>
+    <script src="js/page_script/userlogin.js"></script>
+
+</body>
+
+</html>

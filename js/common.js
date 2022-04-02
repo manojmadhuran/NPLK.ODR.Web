@@ -1,8 +1,10 @@
 /*Globel Value */
 var ctsappversion = "07022022"; //Replace this for any Deployment xxxxxxx.js?v=04052021
 var auth = "Basic V29sZkFwcDpjRzl5ZEd0bGVRPT0=";
-//var apiURL = "http://localhost:2724/";
-var apiURL = "http://192.168.1.20/NPLK.WebAPI/ODRService/";
+
+var apiURL = "http://localhost/NPLK.WebAPI/ODRService/";
+
+//var apiURL = "http://192.168.1.20/NPLK.WebAPI/ODRService/";
 //var appurl = "https://staging-cts.nipsea.com.sg/";
 var _user = "";
 
@@ -119,30 +121,30 @@ function fire_async_api_upload_file(formdata, userid) {
   });
 }
 
-/* Check user is valid user */
-function GetUserDetail() {
-  var useremail = Cookies.get('useremail');
-  var params = {UserEmailAddress: useremail};
-  fire_async_api_post("NPSIReport/GetUserDetail",params).then((response)=>{
-    if(response !== "No Data"){
-      var Jresult = response.result;
-      console.log(Jresult.UserID);
-      Cookies.set('UserID',Jresult.UserID);
-      Cookies.set('UserName',Jresult.UserName);
-      Cookies.set('RoleName',Jresult.RoleName);
-      location.replace('report-submit.html');
-    }else
-    {
-      location.replace('https://wolflodge.nipsea.com.sg/');
-    }
-  });
-}
+
 
 function setUserInfo(){
   document.getElementById("lbluname").innerHTML = Cookies.get('UserName');
   document.getElementById("lbluemail").innerHTML = Cookies.get('useremail');
   document.getElementById("lblurole").innerHTML = Cookies.get('RoleName');
 }
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split('&'),
+    sParameterName,
+    i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
+  }
+  return false;
+};
 
 /* format currency */
 function Currency_Formatter(val) {

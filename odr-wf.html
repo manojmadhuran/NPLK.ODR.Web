@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>ODR Tracking | Uploader</title>
+    <title>ODR Tracking | Comments</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -53,13 +53,13 @@
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item d-none d-sm-inline-block active">
                     <a href="mytask.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="invoice-uploader.html" class="nav-link">Uploader</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block active">
+                <li class="nav-item d-none d-sm-inline-block">
                     <a href="invoice-list.html" class="nav-link">Upload Invoices</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
@@ -107,63 +107,94 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Invoice list</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Invoice list</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- /.container-fluid -->
             </section>
 
             <!-- Main content -->
             <section class="content">
+                <h3 class="font-weight-bold ml-2">ODR Workflow</h3>
                 <!-- Default box -->
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header">  
                         <div class="row">
                             <div class="col-sm-2">
-                                <label>Lorry Number:</label>
-                                <select id="drpLorry" class="form-control select2">
-                                    <option value="0">All</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Date range:</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="far fa-calendar-alt"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" class="form-control float-right" id="datetime">
-                                </div>
+                                <label>Invoice Number:</label>
+                                <input id="txtinvoice" type="text" class="form-control" disabled/>
                             </div>
                             <div class="col-sm-2">
-                                <br>
-                                <button id="btnsearch" class="btn btn-success mt-2">Search</button>
+                                <label>Status</label>
+                                <input id="txtstatus" disabled type="text" class="form-control"/>
                             </div>
-                        </div>
+                            <div class="col-sm-2">
+                                <label>Current Level:</label>
+                                <input id="txtlevel" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Customer Code:</label>
+                                <input id="txtcuscode" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Customer Name:</label>
+                                <input id="txtcusname" disabled type="text" class="form-control"/>
+                            </div>
+                        </div>    
+                        <div class="row mt-3">
+                            <div class="col-sm-1">
+                                <label>Sales Code:</label>
+                                <input id="txtscode" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Area Name:</label>
+                                <input id="txtarea" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>ODR Created Date:</label>
+                                <input id="txtodrdate" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Lorry Number:</label>
+                                <input id="txtlorry" disabled type="text" class="form-control"/>
+                            </div>
+                            <div class="col-sm-1">
+                                <br>
+                                <span type="button" onclick="ViewImage()">
+                                    <img src="dist/img/image.png"/>
+                                </span>
+                            </div>
+                        </div> 
+                        <div id="divremark" class="row mt-3" style="display: none;">
+                            <div class="col-sm-6" >
+                                <label>Reject Reason:</label>
+                                <select id="drpReason" class="form-control select2">
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Remark:</label>
+                                <input id="txtremark" type="text" class="form-control" placeholder="Remark Here"/>
+                            </div>
+                        </div>                       
+                        <div class="row mt-4">
+                            <div id="divlogistic" class="col-sm-4" style="display: none;">
+                                <button type="button" class="btn btn-success" onclick="approve()">Approve ODR</button>
+                                <button type="button" class="btn btn-danger" onclick="reject()">Reject ODR</button>
+                            </div>
+                            <div id="divdipo" class="col-sm-4" style="display: none;">
+                                <button type="button" class="btn btn-warning" onclick="approve()">Forward ODR</button>
+                                <button id="btncomplete" style="display: none;" type="button" class="btn btn-success" onclick="complete()">Complete ODR</button>
+                            </div>
+                        </div>               
                     </div>
                     <div class="card-body">
-                        <table id="tblInvoices" class="table table-bordered table-separate table-head-custom table-checkable nowrap">
+                        <h4 class="font-weight-light">WorkFlow Comments</h4>
+                        <table id="tblWF" class="table table-bordered table-separate table-head-custom table-checkable nowrap">
                             <thead>
-                                <th>Invoice Number</th>
-                                <th>Sales Code</th>
-                                <th>AreaName</th>
-                                <th>Customer Code</th>
-                                <th>Customer Name</th>
-                                <th>Lorry Number</th>
-                                <th>Is ODR</th>
-                                <th>Uploaded Location</th>
-                                <th>Uploaded Date</th>
+                                <th>Full Name</th>
+                                <th>Reason</th>
+                                <th>Action Remark</th>
+                                <th>Status</th>
+                                <th>Action Date</th>
+                                <th>Level</th>                                
                             </thead>
                         </table>
 
@@ -219,7 +250,7 @@
     <script src="dist/js/adminlte.min.js"></script>
 
     <script src="js/common.js"></script>
-    <script src="js/page_script/invoice-list.js"></script>
+    <script src="js/page_script/odr-wf.js"></script>
 
 </body>
 

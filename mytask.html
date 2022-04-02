@@ -113,22 +113,41 @@
 
             <!-- Main content -->
             <section class="content">
+                <h3 class="font-weight-bold ml-2">My Task List</h3>
                 <!-- Default box -->
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="font-weight-bold">My Task List</h3>
+                    <div class="card-header">  
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label>ODR Status:</label>
+                                <select id="drpStatus" class="form-control select2">
+                                    <option value="0">All</option>
+                                    <option value="1">Pending</option>
+                                    <option value="2">Approved</option>
+                                    <option value="3">Rejected</option>
+                                    <option value="4">Closed</option>
+                                    <option value="5">Completed</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <br>
+                                <button id="btnsearch" class="btn btn-success mt-2">Search</button>
+                            </div>
+                        </div>                       
                     </div>
                     <div class="card-body">
-                        <table id="tblMyTask" class="table">
+                        <table id="tblMyTask" class="table table-bordered table-separate table-head-custom table-checkable nowrap">
                             <thead>
-                                <th>No</th>
                                 <th>Invoice Number</th>
+                                <th>Status</th>
                                 <th>Sales Code</th>
                                 <th>AreaName</th>
                                 <th>Customer Code</th>
+                                <th>Customer Name</th>
                                 <th>Lorry Number</th>
-                                <th>Created Date</th>
-                                <th>Created By</th>
+                                <th>Uploaded Location</th>
+                                <th>ODR Date</th>
+                                <th>ODR Completed Date</th>
                             </thead>
                         </table>
 

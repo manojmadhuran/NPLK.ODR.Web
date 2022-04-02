@@ -131,11 +131,31 @@
                         <div class="row">
                             <div class="col-sm-2">
                                 <label>Lorry Number:</label>
-                                <select id="drpLorry" class="form-control select2"></select>
+                                <select id="drpLorry" class="form-control select2">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>ODR Status:</label>
+                                <select id="drpStatus" class="form-control select2">
+                                    <option value="0">All</option>
+                                    <option value="1">Pending</option>
+                                    <option value="2">Approved</option>
+                                    <option value="3">Rejected</option>
+                                    <option value="4">Closed</option>
+                                    <option value="5">Completed</option>
+                                </select>
                             </div>
                             <div class="col-sm-3">
-                                <label>Customer Code:</label>
-                                <input id="txtcuscode" type="text" class="form-control"/>
+                                <label>Date range:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control float-right" id="datetime">
+                                </div>
                             </div>
                             <div class="col-sm-2">
                                 <br>
@@ -144,16 +164,20 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table id="tblODR" class="table table-bordered">
+                        <table id="tblODR" class="table table-bordered table-separate table-head-custom table-checkable nowrap">
                             <thead>
-                                <th>No</th>
                                 <th>Invoice Number</th>
+                                <th>Status</th>
+                                <th>Current Level</th>
                                 <th>Sales Code</th>
                                 <th>AreaName</th>
                                 <th>Customer Code</th>
+                                <th>Customer Name</th>
                                 <th>Lorry Number</th>
-                                <th>Created Date</th>
-                                <th>Created By</th>
+                                <th>Uploaded Location</th>
+                                <th>ODR Date</th>
+                                <th>ODR Completed Date</th>
+                               
                             </thead>
                         </table>
 
