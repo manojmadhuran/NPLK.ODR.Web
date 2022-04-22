@@ -1,6 +1,6 @@
 var myDropzone;
-var userID = 0;
-var userEmail = "";
+var userID = Cookies.get('UserID');
+var userEmail = Cookies.get('UserID');;
 
 Dropzone.autoDiscover = false;
 var mDropZone = new Dropzone(".dropzone", {
@@ -24,7 +24,7 @@ var mDropZone = new Dropzone(".dropzone", {
 
 $(document).ready(function () {
   $(".select2").select2();
-
+  setUserInfo();
   //GetUserDetail();
 });
 

@@ -1,4 +1,4 @@
-var userID = 0;
+var userID = Cookies.get('UserID');
 var userEmail = "";
 
 var country = [];

@@ -1,5 +1,5 @@
-var userID = 4;
-var userlevelID = 4;
+var userID = Cookies.get('UserID');
+var userlevelID = Cookies.get('LevelID');
 var Jresult = [];
 var reasons = [];
 var attachmentURL = "";
@@ -31,6 +31,7 @@ var DTtable = $("#tblWF").DataTable({
 
 $(document).ready(function () {
   headerid = getUrlParameter("headerid");
+  setUserInfo();
   LoadHeader(headerid);
   LoadReasons();
   LoadTable();
@@ -154,6 +155,7 @@ function SetModuleAccess() {
 
       if(CanComplete > 0){
           $("#btncomplete").show();
+          $("#btnforward").hide();
       }
 
 

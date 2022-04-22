@@ -1,4 +1,4 @@
-var userID = 4;
+var userID = Cookies.get('UserID');
 var statusid = 1;
 
 var lorry = [];
@@ -36,6 +36,7 @@ var DTtable = $("#tblMyTask").DataTable({
 $(document).ready(function(){
     $("#drpStatus").val(1).trigger('change');
     LoadTable();
+    setUserInfo();
 });
 
 $("#btnsearch").click(function(){    

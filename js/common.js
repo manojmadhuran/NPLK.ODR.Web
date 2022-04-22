@@ -2,7 +2,9 @@
 var ctsappversion = "07022022"; //Replace this for any Deployment xxxxxxx.js?v=04052021
 var auth = "Basic V29sZkFwcDpjRzl5ZEd0bGVRPT0=";
 
-var apiURL = "http://localhost/NPLK.WebAPI/ODRService/";
+//var apiURL = "http://localhost/NPLK.WebAPI/ODRService/";
+
+var apiURL = "http://192.168.101.3:99/ODRService/";
 
 //var apiURL = "http://192.168.1.20/NPLK.WebAPI/ODRService/";
 //var appurl = "https://staging-cts.nipsea.com.sg/";
@@ -38,6 +40,8 @@ function fire_async_api_get(urlParam) {
           type: "error",
           title: "Oops!",
           text: xhr.responseJSON.Message,
+        }).then(()=>{
+          location.replace("./userlogin.html");
         });
       },
     });
@@ -124,9 +128,9 @@ function fire_async_api_upload_file(formdata, userid) {
 
 
 function setUserInfo(){
-  document.getElementById("lbluname").innerHTML = Cookies.get('UserName');
-  document.getElementById("lbluemail").innerHTML = Cookies.get('useremail');
-  document.getElementById("lblurole").innerHTML = Cookies.get('RoleName');
+  document.getElementById("lbluname").innerHTML = Cookies.get('Name');
+  document.getElementById("lbluemail").innerHTML = Cookies.get('Level');
+  document.getElementById("lblurole").innerHTML = Cookies.get('Role');
 }
 
 

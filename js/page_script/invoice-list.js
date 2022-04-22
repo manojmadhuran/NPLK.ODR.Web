@@ -1,4 +1,4 @@
-var userID = 3;
+var userID = Cookies.get('UserID');
 
 var lorry = [];
 var Jresult = [];
@@ -39,6 +39,7 @@ var DTtable = $("#tblInvoices").DataTable({
 
 $(document).ready(function(){
     LoadLorryNumbers();
+    setUserInfo();
 });
 
 function LoadLorryNumbers(){
